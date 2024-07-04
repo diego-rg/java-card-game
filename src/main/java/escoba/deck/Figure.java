@@ -1,4 +1,4 @@
-package escoba.card;
+package escoba.deck;
 
 /**
  * Enum that represents the figures of each suit in the spanish deck
