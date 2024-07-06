@@ -2,9 +2,9 @@ package escoba.deck;
 
 import java.util.LinkedList;
 
-import escoba.card.Card;
 import escoba.card.Figure;
 import escoba.card.Suit;
+import escoba.card.Card;
 
 /**
  * Class that represents the spanish deck to play the game escoba
@@ -37,7 +37,7 @@ public class Deck {
 		LinkedList<Card> spanishDeck = new LinkedList<Card>();
 		for (Suit f : Suit.values()) {
 			for (Figure s : Figure.values()) {
-				spanishDeck.add(new Card(f, s));
+				spanishDeck.add(new Card(s, f));
 			}
 		}
 		return spanishDeck;
