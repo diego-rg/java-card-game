@@ -1,9 +1,9 @@
-package escoba.deck;
+package escoba.card;
 
 /**
  * Enum that represents the figures of each suit in the spanish deck
  */
-enum Figure {
+public enum Figure {
 	ACE('1', "Ace", 1), TWO('2', "Two", 2), THREE('3', "Three", 3), FOUR('4', "Four", 4), FIVE('5', "Five", 5),
 	SIX('6', "Six", 6), SEVEN('7', "Seven", 7), VALET('V', "Valet", 8), CAVALIER('C', "Cavalier", 9),
 	KING('K', "King", 10);

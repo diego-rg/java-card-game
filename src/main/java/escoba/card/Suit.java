@@ -1,10 +1,10 @@
-package escoba.deck;
+package escoba.card;
 
 /**
  * Enum that represents the suits of the spanish deck
  */
-enum Suit {
-	SWORDS('s', "Swords"), CUPS('u', "Cups"), COINS('o', "Coins"), CLUBS('l', "Clubs");
+public enum Suit {
+	COINS('o', "Coins"), CUPS('u', "Cups"), SWORDS('s', "Swords"), CLUBS('l', "Clubs");
 
 	private final char symbol;
 	private final String name;
