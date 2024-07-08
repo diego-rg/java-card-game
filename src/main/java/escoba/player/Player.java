@@ -10,7 +10,7 @@ import escoba.trick.Trick;
 /**
  * Abstract class that defines de base characteristics of a player in the game
  */
-abstract class Player {
+public abstract class Player {
 	private LinkedList<Trick> tricks;
 	private LinkedList<Card> hand;
 

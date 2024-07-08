@@ -15,12 +15,10 @@ import escoba.card.Suit;
 public class TrickTest {
 	Card oneOfCoins = new Card(Figure.ACE, Suit.COINS);
 	Card sevenOfClubs = new Card(Figure.SEVEN, Suit.CLUBS);
-	Card kingOfSwords = new Card(Figure.KING, Suit.SWORDS);
+	Card sevenOfSwords = new Card(Figure.SEVEN, Suit.SWORDS);
 
-	LinkedList<Card> cards = new LinkedList<Card>(Arrays.asList(oneOfCoins, sevenOfClubs, kingOfSwords));
-
-	Trick normalTrick = new Trick(cards, false);
-	Trick escobaTrick = new Trick(cards, true);
+	Trick normalTrick = new Trick(new LinkedList<Card>(Arrays.asList(oneOfCoins, sevenOfClubs, sevenOfSwords)), false);
+	Trick escobaTrick = new Trick(new LinkedList<Card>(Arrays.asList(oneOfCoins, sevenOfClubs, sevenOfSwords)), true);
 
 	@Test
 	void normalTrickMustNotHaveEscoba() {
