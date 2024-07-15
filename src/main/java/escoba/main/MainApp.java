@@ -1,12 +1,19 @@
 package escoba.main;
 
-import escoba.deck.Deck;
+import escoba.game.Game;
 
 public class MainApp {
 
 	public static void main(String[] args) {
-		Deck spanishDeck = new Deck();
-		System.out.println(spanishDeck.toString());
-		System.out.println(spanishDeck.getCards().size());
+		Game game = new Game();
+		System.out.println(game.getTable().getStock().toString());
+		System.out.println(game.getTable().getHand().toString());
+		try {
+			game.init();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println(game.getTable().getStock().toString());
+		System.out.println(game.getTable().getHand().toString());
 	}
 }

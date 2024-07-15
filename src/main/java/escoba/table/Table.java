@@ -3,6 +3,7 @@ package escoba.table;
 import java.util.LinkedList;
 
 import escoba.card.Card;
+import escoba.deck.Deck;
 
 /**
  * Class that represents the the cards that dont belong to the players
@@ -18,7 +19,7 @@ public class Table {
 	public Table() {
 		super();
 		this.hand = new LinkedList<Card>();
-		this.stock = new LinkedList<Card>();
+		this.stock = new Deck().getCards();
 	}
 
 	/**
@@ -38,8 +39,7 @@ public class Table {
 	/**
 	 * Adds a new playable card to the table
 	 * 
-	 * @param Card card that the table will receive after the card distribution when the game starts or when a player
-	 *             throws it
+	 * @param Card card that the table will receive after the card distribution or when a player throws it
 	 */
 	public void receiveCard(Card card) {
 		hand.add(card);
