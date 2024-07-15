@@ -38,27 +38,35 @@ public abstract class Player {
 	}
 
 	/**
-	 * @param trick trick that the player will receive after winning one turn by sum 15
+	 * Adds the trick the player won to his tricks list
+	 * 
+	 * @param Trick trick that the player will receive after winning one turn by sum 15
 	 */
 	public void receiveTrick(Trick trick) {
 		tricks.add(trick);
 	}
 
 	/**
-	 * @param Card Card that the player will receive and keep in his hand
+	 * Adds the a new playable card to the player's hand
+	 * 
+	 * @param Card card that the player will receive and keep in his hand
 	 */
 	public void receiveCard(Card card) {
 		hand.add(card);
 	}
 
 	/**
-	 * @param Card Card that the player will throw to the table if he cant sum 15 this turn
+	 * Throws a card from player's hand to the table when he does not get a trick
+	 * 
+	 * @param Card card that the player will throw to the table if he cant sum 15 this turn
 	 */
 	public void throwCard(Card card) {
 		hand.remove(card);
 	}
 
 	/**
+	 * Calculates the score of the player after the game ends
+	 * 
 	 * @param int final score of the player when the game finishes: -Each escoba gives 1 point -The seven of coins gives
 	 *            1 point -The player with more cards (21 or more) gets 1 point -The player with more coins (6 or more)
 	 *            gets 1 point -The player with more sevens (3 or more) gets 1 point
@@ -85,7 +93,7 @@ public abstract class Player {
 			score++;
 		if (coins > 5)
 			score++;
-		if (sevens > 3)
+		if (sevens > 2)
 			score++;
 		return score;
 	}
