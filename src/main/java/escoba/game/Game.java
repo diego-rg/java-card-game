@@ -19,7 +19,7 @@ import escoba.table.Table;
 public class Game implements Subject {
 	private HashMap<Integer, Player> players;
 	private Table table;
-	private Player currentPlayer;
+	private Integer currentPlayer;
 	private Player userWonLastTrick;
 	private boolean isFinished;
 	private ArrayList<Observer> observers;
@@ -59,7 +59,7 @@ public class Game implements Subject {
 	/**
 	 * @return the currentPlayer
 	 */
-	public Player getCurrentPlayer() {
+	public Integer getCurrentPlayer() {
 		return currentPlayer;
 	}
 
@@ -95,6 +95,7 @@ public class Game implements Subject {
 		shuffleDeck(table.getStock());
 		dealCardsToTable();
 		dealCardsToPlayers();
+		currentPlayer = 1;
 	}
 
 	/**
@@ -144,11 +145,45 @@ public class Game implements Subject {
 	private void dealCardsToPlayers() throws Exception {
 		if (table.getStock().size() >= 6) {
 			for (Player p : players.values()) {
-				p.receiveCard(table.getStock().pollLast());
+				for (int i = 0; i < 3; i++) {
+					p.receiveCard(table.getStock().pollLast());
+				}
 			}
 		} else {
 			throw new Exception("ERROR: No enough cards to deal!");
 		}
+	}
+
+	/**
+	 * Changes the current player after each turn
+	 */
+	public void changeCurrentPlayer() {
+		currentPlayer = currentPlayer % players.size() + 1;
+	}
+
+	/**
+	 * Manages the turn of each player after a card is played by changing the active player
+	 * 
+	 * @throws Exception if there are no enough cards to deal
+	 */
+	public void finishTurn() throws Exception {
+		if (arePlayersOutOfCards() && table.getStock().size() < 1)
+			isFinished = true;
+		if (arePlayersOutOfCards())
+			dealCardsToPlayers();
+		currentPlayer = currentPlayer % players.size() + 1;
+	}
+
+	/**
+	 * Checks if both players are out of cards to deal cards once more
+	 */
+	private boolean arePlayersOutOfCards() {
+		for (Player p : players.values()) {
+			if (p.getHand().size() > 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	@Override
