@@ -3,20 +3,28 @@ package escoba.main;
 import escoba.game.Game;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
 	@Override
-	public void start(Stage ventanaPrincipal) throws Exception {
+	public void start(Stage mainWindow) throws Exception {
 
-		Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
-		Scene scene = new Scene(root, 300, 150);
-		ventanaPrincipal.setScene(scene);
-		ventanaPrincipal.setTitle("Ejemplo con FXML");
-		ventanaPrincipal.show();
+		// Creates stage from fxml file using HBox container
+		HBox root = FXMLLoader.load(getClass().getResource("/view/main.fxml"));
+		// Icon from img
+		mainWindow.getIcons().add(new Image(Game.class.getResourceAsStream("/img/cards/1o.png")));
+		// Creates the scene
+		Scene scene = new Scene(root, 1024, 768);
+		// Links css file
+		scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
+		// Prepares the scene
+		mainWindow.setScene(scene);
+		mainWindow.setTitle("Escoba");
+		mainWindow.show();
 	}
 
 	public static void main(String[] args) {
