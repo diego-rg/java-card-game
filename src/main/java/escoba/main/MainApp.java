@@ -5,7 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
@@ -14,7 +14,7 @@ public class MainApp extends Application {
 	public void start(Stage mainWindow) throws Exception {
 
 		// Creates stage from fxml file using HBox container
-		HBox root = FXMLLoader.load(getClass().getResource("/view/main.fxml"));
+		VBox root = FXMLLoader.load(getClass().getResource("/view/main.fxml"));
 		// Icon from img
 		mainWindow.getIcons().add(new Image(Game.class.getResourceAsStream("/img/cards/1o.png")));
 		// Creates the scene
