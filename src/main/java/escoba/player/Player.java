@@ -1,6 +1,7 @@
 package escoba.player;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 import escoba.card.Card;
 import escoba.card.Figure;
@@ -11,16 +12,51 @@ import escoba.trick.Trick;
  * Abstract class that defines de base characteristics of a player in the game
  */
 public abstract class Player {
+	private int id;
 	private LinkedList<Trick> tricks;
 	private LinkedList<Card> hand;
+	public static int totalPlayers = 0;
 
 	/**
 	 * 
 	 */
 	public Player() {
 		super();
+		totalPlayers++;
+		this.id = totalPlayers;
 		this.tricks = new LinkedList<Trick>();
 		this.hand = new LinkedList<Card>();
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @return the totalPlayers
+	 */
+	public static int getTotalPlayers() {
+		return totalPlayers;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Player other = (Player) obj;
+		return id == other.id;
 	}
 
 	/**

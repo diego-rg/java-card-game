@@ -1,9 +1,8 @@
 package escoba.card;
 
-import java.io.FileNotFoundException;
-
 import escoba.game.Game;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * Class that manages the view of a card to be rendered later inside a parent container
@@ -14,7 +13,7 @@ public class CardView {
 	private boolean isVisible;
 	private boolean isSelected;
 	private String srcImg;
-	private Image element;
+	private ImageView element;
 
 	/**
 	 * @param model
@@ -32,7 +31,7 @@ public class CardView {
 			this.srcImg = "/img/cards/" + this.model.getSymbol() + ".png";
 		else
 			this.srcImg = "/img/cards/back.png";
-		this.element = new Image(Game.class.getResourceAsStream(this.srcImg));
+		this.element = new ImageView(new Image(Game.class.getResourceAsStream(this.srcImg)));
 	}
 
 	/**
@@ -94,14 +93,14 @@ public class CardView {
 	/**
 	 * @return the element
 	 */
-	public Image getElement() {
+	public ImageView getElement() {
 		return element;
 	}
 
 	/**
 	 * @param element the element to set
 	 */
-	public void setElement(Image element) {
+	public void setElement(ImageView element) {
 		this.element = element;
 	}
 }

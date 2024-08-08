@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 import escoba.card.Card;
 import escoba.card.CardView;
+import javafx.scene.layout.HBox;
 
 /**
  * Class that renders each card in the players hand
@@ -61,6 +62,19 @@ public class HandView {
 	public void createViews() throws FileNotFoundException {
 		for (Card c : this.model.getHand()) {
 			this.cards.push(new CardView(c, isVisible));
+		}
+	}
+
+	/**
+	 * Creates the views once again and renders the views of the hand
+	 * 
+	 * @throws FileNotFoundException
+	 * 
+	 */
+	public void render(HBox container) throws FileNotFoundException {
+		createViews();
+		for (CardView c : cards) {
+			container.getChildren().add(c.getElement());
 		}
 	}
 }

@@ -6,14 +6,16 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="escoba.game.GameControllerPrueba">
-    <HBox>
-    </Hbox>
-    <HBox>
-    </Hbox>
-    <HBox>
-    </Hbox>
-    <HBox>
-    </Hbox>
+    <HBox fx:id="menu">
+    <Text fx:id="title"/>
+    </HBox>
+    <HBox fx:id="hand2">
+    </HBox>
+    <HBox fx:id="table">
+    </HBox>
+    <HBox fx:id="hand1">
+    </HBox>
 </VBox>

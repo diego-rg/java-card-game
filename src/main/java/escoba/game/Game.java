@@ -85,13 +85,23 @@ public class Game implements Subject {
 	}
 
 	/**
+	 * 
+	 * 
+	 */
+	public Player getPlayerById(int id) {
+		return players.get(id);
+	}
+
+	/**
 	 * Starts the game. IMPORTANT: for now, it will be only a 1v1 game, human vs (throwCard)IA
 	 * 
 	 * @throws Exception when there are no enough cards to deal
 	 */
 	public void init() throws Exception {
-		addPlayer(1, new Human());
-		addPlayer(2, new Bot());
+		Human playerOne = new Human();
+		Bot playerTwo = new Bot();
+		addPlayer(playerOne.getId(), playerOne);
+		addPlayer(playerTwo.getId(), playerTwo);
 		shuffleDeck(table.getStock());
 		dealCardsToTable();
 		dealCardsToPlayers();
