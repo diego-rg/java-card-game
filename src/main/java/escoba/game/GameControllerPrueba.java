@@ -6,6 +6,7 @@ import escoba.main.MainController;
 import escoba.player.HandView;
 import escoba.table.StockView;
 import escoba.table.TableHandView;
+import escoba.trick.TrickView;
 import javafx.fxml.FXML;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -19,9 +20,9 @@ public class GameControllerPrueba {
 	@FXML
 	private HBox hand2;
 	@FXML
-	private HBox trick1;
+	private StackPane trick1;
 	@FXML
-	private HBox trick2;
+	private StackPane trick2;
 	@FXML
 	private HBox handTable;
 	@FXML
@@ -32,10 +33,14 @@ public class GameControllerPrueba {
 	@FXML
 	public void initialize() throws FileNotFoundException {
 		title.setText("Escoba: a Spanish card game");
-		HandView player1 = new HandView(MainController.game.getPlayerById(1), true);
-		player1.render(hand1);
-		HandView player2 = new HandView(MainController.game.getPlayerById(2), false);
-		player2.render(hand2);
+		HandView player1Hand = new HandView(MainController.game.getPlayerById(1), true);
+		player1Hand.render(hand1);
+		HandView player2Hand = new HandView(MainController.game.getPlayerById(2), false);
+		player2Hand.render(hand2);
+		TrickView player1Trick = new TrickView(MainController.game.getPlayerById(1), false);
+		player1Trick.render(trick1);
+		TrickView player2Trick = new TrickView(MainController.game.getPlayerById(2), false);
+		player2Trick.render(trick2);
 		TableHandView table = new TableHandView(MainController.game.getTable(), true);
 		table.render(handTable);
 		StockView stockTable = new StockView(MainController.game.getTable(), false);

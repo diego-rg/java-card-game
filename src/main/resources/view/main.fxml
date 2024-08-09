@@ -16,7 +16,7 @@
     
     <HBox fx:id="player2">
     	<HBox fx:id="hand2"></HBox>
-    	<HBox fx:id="tricks2"></HBox>
+    	<StackPane fx:id="tricks2"></StackPane>
     </HBox>
       
     <HBox fx:id="table">
@@ -26,6 +26,6 @@
     
     <HBox fx:id="player1">
     	<HBox fx:id="hand1"></HBox>
-    	<HBox fx:id="tricks1"></HBox>
+    	<StackPane fx:id="tricks1"></StackPane>
     </HBox>
 </VBox>
