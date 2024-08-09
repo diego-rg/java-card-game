@@ -1,3 +1,21 @@
 VBox {
     -fx-background-color: #2F4F30;
 }
+
+#menu {
+    -fx-background-color: lightgray;
+    -fx-padding: 10px;
+}
+
+#title {
+    -fx-font-size: 20px;
+}
+
+VBox #player1,
+VBox #player2 {
+    -fx-padding: 10px;
+}
+
+VBox #table {
+    -fx-padding: 50px;
+}

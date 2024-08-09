@@ -10,12 +10,21 @@
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="escoba.game.GameControllerPrueba">
     <HBox fx:id="menu">
-    <Text fx:id="title"/>
+    	<Text fx:id="title"/>
     </HBox>
-    <HBox fx:id="hand2">
+    
+    <HBox fx:id="player2">
+    	<HBox fx:id="hand2"></HBox>
+    	<HBox fx:id="tricks2"></HBox>
     </HBox>
+      
     <HBox fx:id="table">
+    	<HBox fx:id="handTable"></HBox>
+    	<HBox fx:id="stock"></HBox>
     </HBox>
-    <HBox fx:id="hand1">
+    
+    <HBox fx:id="player1">
+    	<HBox fx:id="hand1"></HBox>
+    	<HBox fx:id="tricks1"></HBox>
     </HBox>
 </VBox>

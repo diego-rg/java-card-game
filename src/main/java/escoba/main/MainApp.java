@@ -23,6 +23,7 @@ public class MainApp extends Application {
 		// Prepares the scene
 		mainStage.setScene(mainScene);
 		mainStage.setTitle("Escoba");
+		mainStage.setMaximized(true);
 		// Starts the scene
 		mainStage.show();
 	}

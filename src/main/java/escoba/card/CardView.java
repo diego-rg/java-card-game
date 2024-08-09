@@ -31,7 +31,7 @@ public class CardView {
 			this.srcImg = "/img/cards/" + this.model.getSymbol() + ".png";
 		else
 			this.srcImg = "/img/cards/back.png";
-		this.element = new ImageView(new Image(Game.class.getResourceAsStream(this.srcImg)));
+		this.element = new ImageView(new Image(Game.class.getResourceAsStream(this.srcImg), 200, 200, true, false));
 	}
 
 	/**
