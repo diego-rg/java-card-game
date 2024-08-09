@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.StackPane?>
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="escoba.game.GameControllerPrueba">
     <HBox fx:id="menu">
@@ -20,7 +21,7 @@
       
     <HBox fx:id="table">
     	<HBox fx:id="handTable"></HBox>
-    	<HBox fx:id="stock"></HBox>
+    	<StackPane fx:id="stock"></StackPane>
     </HBox>
     
     <HBox fx:id="player1">

@@ -4,9 +4,11 @@ import java.io.FileNotFoundException;
 
 import escoba.main.MainController;
 import escoba.player.HandView;
+import escoba.table.StockView;
 import escoba.table.TableHandView;
 import javafx.fxml.FXML;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
 public class GameControllerPrueba {
@@ -23,7 +25,7 @@ public class GameControllerPrueba {
 	@FXML
 	private HBox handTable;
 	@FXML
-	private HBox stock;
+	private StackPane stock;
 	@FXML
 	private Text title;
 
@@ -36,5 +38,7 @@ public class GameControllerPrueba {
 		player2.render(hand2);
 		TableHandView table = new TableHandView(MainController.game.getTable(), true);
 		table.render(handTable);
+		StockView stockTable = new StockView(MainController.game.getTable(), false);
+		stockTable.render(stock);
 	}
 }

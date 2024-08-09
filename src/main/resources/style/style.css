@@ -19,3 +19,7 @@ VBox #player2 {
 VBox #table {
     -fx-padding: 50px;
 }
+
+#stock Image {
+    -fx-translate-z: -108px;
+}
